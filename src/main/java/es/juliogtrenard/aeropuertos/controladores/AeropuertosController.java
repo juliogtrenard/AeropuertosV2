@@ -440,7 +440,7 @@ public class AeropuertosController implements Initializable {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
             alerta("Error abriendo ventana, por favor inténtelo de nuevo");
         }
     }
@@ -476,6 +476,18 @@ public class AeropuertosController implements Initializable {
         colFinanciacion.setCellValueFactory(new PropertyValueFactory("financiacion"));
         TableColumn<AeropuertoPublico, Integer> colTrabajadores = new TableColumn<>("Nº Trabajadores");
         colTrabajadores.setCellValueFactory(new PropertyValueFactory("num_trabajadores"));
+
+        colId.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colNombre.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colPais.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colCiudad.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colCalle.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colNumero.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colAnio.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colCapacidad.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colFinanciacion.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+        colTrabajadores.prefWidthProperty().bind(tabla.widthProperty().divide(10));
+
         tabla.getColumns().addAll(colId,colNombre,colPais,colCiudad,colCalle,colNumero,colAnio,colCapacidad,colFinanciacion,colTrabajadores);
 
         ObservableList<AeropuertoPublico> aeropuertos = DaoAeropuertoPublico.cargarListado();
@@ -512,6 +524,17 @@ public class AeropuertosController implements Initializable {
         colCapacidad.setCellValueFactory(cellData -> javafx.beans.binding.Bindings.createObjectBinding(() -> cellData.getValue().getAeropuerto().getCapacidad()));
         TableColumn<AeropuertoPrivado, Integer> colSocios = new TableColumn<>("Nº Socios");
         colSocios.setCellValueFactory(new PropertyValueFactory("numero_socios"));
+
+        colId.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+        colNombre.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+        colPais.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+        colCiudad.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+        colCalle.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+        colNumero.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+        colAnio.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+        colCapacidad.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+        colSocios.prefWidthProperty().bind(tabla.widthProperty().divide(9));
+
         tabla.getColumns().addAll(colId,colNombre,colPais,colCiudad,colCalle,colNumero,colAnio,colCapacidad,colSocios);
 
         ObservableList<AeropuertoPrivado> aeropuertos = DaoAeropuertoPrivado.cargarListado();
