@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
@@ -44,6 +45,18 @@ public class ActivarDesactivarAvionController implements Initializable {
     private RadioButton rbDesactivado;
 
     /**
+     * Boton de guardar
+     */
+    @FXML
+    private Button btnGuardar;
+
+    /**
+     * Boton de cancelar
+     */
+    @FXML
+    private Button btnCancelar;
+
+    /**
      * Función que se ejecuta cuando se carga la ventana
      *
      * @param url la url
@@ -51,6 +64,9 @@ public class ActivarDesactivarAvionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        btnGuardar.setDefaultButton(true);
+        btnCancelar.setCancelButton(true);
+
         ObservableList<Aeropuerto> aeropuertos = DaoAeropuerto.cargarListado();
         cbAeropuerto.setItems(aeropuertos);
         cbAeropuerto.getSelectionModel().select(0);
