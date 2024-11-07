@@ -48,6 +48,18 @@ public class AniadirAvionController implements Initializable {
     private TextField txtVelMax;
 
     /**
+     * Boton para guardar
+     */
+    @FXML
+    private Button btnGuardar;
+
+    /**
+     * Boton para cancelar
+     */
+    @FXML
+    private Button btnCancelar;
+
+    /**
      * Cuando se carga la ventana
      *
      * @param url la url
@@ -55,6 +67,9 @@ public class AniadirAvionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        btnGuardar.setDefaultButton(true);
+        btnCancelar.setCancelButton(true);
+
         ObservableList<Aeropuerto> aeropuertos = DaoAeropuerto.cargarListado();
         cbAeropuerto.setItems(aeropuertos);
         cbAeropuerto.getSelectionModel().select(0);
