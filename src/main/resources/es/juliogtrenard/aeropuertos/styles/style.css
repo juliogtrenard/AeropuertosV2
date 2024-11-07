@@ -1,0 +1,33 @@
+
+.button {
+    -fx-background-color: crimson;
+    -fx-font-weight: bold;
+}
+
+.btnGuardar {
+    -fx-background-color: crimson;
+}
+
+.btnCancelar {
+    -fx-background-color: crimson;
+}
+
+.text-field:active {
+    -fx-border-color: crimson;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: crimson;
+}
+
+menu:selected, menu-item:selected {
+    -fx-background-color: crimson;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #e78484;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #a29df5;
+}
