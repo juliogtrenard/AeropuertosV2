@@ -10,7 +10,9 @@ Aplicación para gestionar aeropuertos y aviones usando JavaFX con FXML, mejoran
 
 ### Cómo usar
 
-* Clona el repositorio en algún IDE y ejecuta el programa.
+* Clona el repositorio en algún IDE.
+
+* Rellena los datos del usuario y contraseña a la base de datos en el fichero configuracion.properties y ejecuta el programa.
 
 ## Ayuda
 
